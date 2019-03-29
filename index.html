@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Parallax With Zoom</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,600" rel="stylesheet">
+
+	<style>
+		html, body{
+			margin: 0;
+			padding: 0;
+			background-color: #2c2f34;
+		}
+		.main{
+			margin-top: 100px;
+		}
+		.hero-back{
+			width: 100%;
+			height: calc(100vh);
+			background: url(hill.jpg) no-repeat 50% 50%;
+			background-size: cover;
+			position: relative;
+		}
+		h1.heading{
+			font-family: 'Oswald', sans-serif;
+			font-weight: 600;
+			color: white;
+			padding-left: 20px;
+			border-left: 5px solid white;
+		}
+		p.para{
+			font-family: sans-serif;
+			line-height: 25px;
+			color: #b9b9b9;
+			letter-spacing: 2px;
+		}
+		
+		.hero-back img{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+		
+		
+		/*Section Styling*/
+		section {
+            margin-top: 80px;
+			margin-bottom: 100px;
+			font-family: sans-serif;
+        }
+
+        .big-box {
+            height: 200px;
+            background-color: #000;
+        }
+
+        .bg-1 {
+            background:
+                linear-gradient(rgba(33, 36, 39, 0.9), rgba(33, 36, 39, 0.9)),
+                url(desert.jpg);
+			background-size: cover;
+        }
+		        
+
+        .box-card {
+            /*          border: 1px solid grey;*/
+            border-radius: 5px;
+            height: 200px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+			filter: grayscale(100%);
+        }
+
+        .box-card .body-card {
+            padding: 20px 30px;
+            /*           background-color: #000; */
+        }
+        
+        .box-card .body-card h5{
+            transform: translate(0, 35px);
+        }
+        
+        .box-card p {
+            font-size: 14px;
+			color: #b9b9b9;
+            opacity: 0;
+            transform: translate(0, 20px);
+        }
+
+        .box-card:hover p {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: 0.5s;
+        }
+        .box-card:hover h5{
+            transform: translate(0, 0px);
+            transition: 0.5s;
+        }
+        .box-card:hover{
+            box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+            transform: translate(0,-5px);
+			filter: grayscale(0%);
+            transition: 0.5s;
+        }
+
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="hero-back">
+		<img src="hill-front.png" alt="">
+	</div>
+	<div class="container main mb-5">
+		<h1 class="heading mb-4">Content Goes Here</h1>
+		<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias laudantium eveniet laboriosam reprehenderit, voluptate nihil veniam, ex porro perspiciatis similique nobis, doloribus vel corporis commodi eaque sunt repellendus aliquid, eius. Architecto, doloremque quam enim ea dolores unde, ducimus veniam est aliquid atque veritatis, delectus qui sunt. Dignissimos sequi magnam, provident minima quas reiciendis nam harum ipsum nobis, modi officia sint?</p>
+		<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae odio magnam nisi exercitationem quisquam officiis, totam itaque. Ratione, repellendus, sed.</p>
+		<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto sunt sit eum, quod expedita deserunt obcaecati pariatur, dolore ipsum, autem, tempore voluptates fuga nostrum velit quis. Quia sed asperiores unde repellendus, neque pariatur optio quas eos! Distinctio, modi deserunt ducimus.</p>
+		<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro reiciendis esse fugit doloremque! Voluptatum doloribus consequuntur ab, deserunt magnam voluptas laborum vel hic quisquam expedita sapiente. Accusantium id nobis numquam itaque reiciendis doloremque, nostrum. Ratione praesentium ea officiis eius recusandae ipsam, facere voluptas unde nihil officia dolores facilis aspernatur optio. Veritatis quaerat quae ex mollitia, voluptatum nesciunt alias aliquam ipsum iste odit molestias quas iure at, rem magnam, pariatur vel sint tempore, explicabo dignissimos expedita dolore dolor delectus? Voluptate autem architecto unde, ipsum ab numquam illum impedit inventore nihil vitae quos laudantium tenetur voluptatem nobis sequi consequatur, possimus commodi dolores odio eligendi! Quisquam, explicabo tempore dolorum asperiores, dolorem consequatur minus dicta voluptates harum nostrum, necessitatibus saepe id error ratione vero?</p>
+	</div>
+	
+	<section>
+        <div class="container">
+           <h1 class="heading mb-5">Our Acheivements</h1>
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="box-card text-center bg-1">
+                        <div class="body-card">
+                            <h5 class="card-title font-weight-bold">Sample Text 1</h5>
+                            <p class="card-text text-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga, mollitia nemo optio magni ratione beatae saepe quas sunt, qui esse, odio hic repudiandae voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="box-card text-center bg-1">
+                        <div class="body-card">
+                            <h5 class="card-title font-weight-bold">Sample Text 2</h5>
+                            <p class="card-text text-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga, mollitia nemo optio magni ratione beatae saepe quas sunt, qui esse, odio hic repudiandae voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="box-card text-center bg-1">
+                        <div class="body-card">
+                            <h5 class="card-title font-weight-bold">Sample Text 3</h5>
+                            <p class="card-text text-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga, mollitia nemo optio magni ratione beatae saepe quas sunt, qui esse, odio hic repudiandae voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="box-card text-center bg-1">
+                        <div class="body-card">
+                            <h5 class="card-title font-weight-bold">Sample Text 4</h5>
+                            <p class="card-text text-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga, mollitia nemo optio magni ratione beatae saepe quas sunt, qui esse, odio hic repudiandae voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="box-card text-center bg-1">
+                        <div class="body-card">
+                            <h5 class="card-title font-weight-bold">Sample Text 5</h5>
+                            <p class="card-text text-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga, mollitia nemo optio magni ratione beatae saepe quas sunt, qui esse, odio hic repudiandae voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="box-card text-center bg-1">
+                        <div class="body-card">
+                            <h5 class="card-title font-weight-bold">Sample Text 6</h5>
+                            <p class="card-text text-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga, mollitia nemo optio magni ratione beatae saepe quas sunt, qui esse, odio hic repudiandae voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+ 
+ <footer class="text-center bg-dark text-muted p-4">All Rights Reserved. Copyright &copy; 2019 | AVIONICS.</footer>
+
+
+
+
+
+	<script type="text/javascript">
+		$(window).scroll(function() {
+			var scrollPos = $(this).scrollTop();
+			$(".hero-back").css({
+				'background-size': 100 + scrollPos + '%'
+			});
+		});
+
+	</script>
+
+
+
+</body>
+
+</html>
